@@ -35,14 +35,14 @@ Required python libraries:
 An example run command:
 
 ```
-python3 ace_run.py --num_parallel_runs 0 --target_class zebra --source_dir SOURCE_DIR --working_dir SAVE_DIR --model_to_run GoogleNet --model_path ./tensorflow_inception_graph.pb --labels_path ./imagenet_labels.txt --bottlenecks mixed4c --num_random_exp 40 --max_imgs 50 --min_imgs 30
+python ace_run.py --num_parallel_workers 0 --target_class zebra --source_dir src_imgs --working_dir results --model_to_run GoogleNet --model_path ./tensorflow_inception_graph.pb --labels_path ./imagenet_labels.txt --bottlenecks mixed4c --num_random_exp 40 --max_imgs 50 --min_imgs 30
 ```
 
 where:
 ```
 num_random_exp: number of random concepts with respect to which concept-activaion-vectors are computed for calculating the TCAV score of a discovered concept (recommended >20).
 ```
-For example if you set num_random_exp=20, you need to create folders random500_0, rando500_1, ..., random_500_19 and put them in the SOURCE_DIR where each folder contains a set of 50-500 randomly selected images of the dataset (ImageNet in our case). 
+For example if you set num_random_exp=20, you need to create folders random500_0, random500_1, ..., random500_19 and put them in the SOURCE_DIR where each folder contains a set of 50-500 randomly selected images of the dataset (ImageNet in our case). 
 
 ```
 target_class: Name of the class which prediction is to be explained.
