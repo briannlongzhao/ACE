@@ -6,7 +6,7 @@ import os
 import numpy as np
 import sklearn.metrics as metrics
 from tcav import utils
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
 
 import ace_helpers
 from ace import ConceptDiscovery
